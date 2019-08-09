@@ -3,7 +3,7 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component
 export default class PermissionsWeb extends Vue {
     public inset: boolean = true;
-    public response: string = 'No permissions yet';
+    public response: string = '';
     public permissions: PermissionsModule = {
         dashboard: {
             id: 0,
@@ -95,16 +95,72 @@ export default class PermissionsWeb extends Vue {
         keys.forEach(el => permissions.push(this.permissions[el] as any));
         return permissions;
     }
+    getPermissionsBossAttributes(): PermissionAttribute[] {
+        let response: PermissionAttribute[] = [];
+        for(let item in this.permissions){
+            response.push(this.permissions[item]);
+        }
+        return response;
+    }
+    getPermissionByPid(pid: string, permissions: PermissionAttribute[]): PermissionAttribute | null {
+        let intent = permissions.find(element => {
+            if(element.isBoss && element.pid == pid){
+                return element;
+            } else {
+                if(this.hasChildren(element)){
+                    return this.getPermissionByPid(pid, element.childrens);
+                }
+            }
+        });
+        return intent !== undefined ? intent : null;
+    }
     getChildrens(attr: PermissionAttribute): PermissionAttribute[] {
         return attr.childrens;
     }
     hasChildren(attr: PermissionAttribute): boolean {
         return attr && attr.childrens.length > 0;
     }
+    getPermissionsForChildrens(childrens: PermissionAttribute[]): string[] {
+        let permissions: string[] = [];
+        childrens.forEach(el => {
+            if(el.isBoss){
+                if(el.value){
+                    permissions.push(el.pid);
+                } else {
+                    if(this.hasChildren(el)){
+                        let childrenPermissions: string[] = this.getPermissionsForChildrens(el.childrens);
+                        permissions.push(...childrenPermissions);
+                    }
+                }
+            } else {
+                if(el.value){
+                    permissions.push(`${el.pid}:${el.id}`);
+                }
+                if(this.hasChildren(el)){
+                    let childrenPermissions: string[] = this.getPermissionsForChildrens(el.childrens);
+                    permissions.push(...childrenPermissions);
+                }
+            }
+        });
+        return permissions;
+    }
     getPermissions(): void {
-        this.response = 'xd';
+        let permissions: string[] = [];
+        for(let key in this.permissions){
+            let element = this.permissions[key];
+            if(element.isBoss){
+                if(element.value){
+                    permissions.push(element.pid);
+                } else {
+                    let childrenPermissions = this.getPermissionsForChildrens(element.childrens);
+                    permissions.push(...childrenPermissions);
+                }
+            }
+        }
+        this.response = permissions.join(';');
     }
     resetPermissions(): void {
+        this.response = '';
         for(let item in this.permissions){
             let element = this.permissions[item];
             this.setChildrenValue(element, false);
@@ -116,6 +172,19 @@ export default class PermissionsWeb extends Vue {
             props.childrens.forEach(el => {
                 this.setChildrenValue(el, val);
             });
+        }
+    }
+    childrenUpdateEvent(e: boolean, attr: PermissionAttribute): void {
+        if(attr.isBoss || e){
+            if(attr.childrens.length > 0){
+                attr.childrens.forEach(element => {
+                    element.value = e;
+                    this.childrenUpdateEvent(e, element);
+                });
+            }
+        } else {
+            let bossName: string = attr.pid;
+            console.log(this.getPermissionByPid(bossName, this.getPermissionsBossAttributes()));
         }
     }
 }

@@ -19,6 +19,7 @@
                         :label="item.name"
                         :inset="inset"
                         v-model="item.value"
+                        @change="childrenUpdateEvent($event, item)"
                         hide-details
                     ></v-switch>
                     <v-container v-if="hasChildren(item)">
@@ -28,6 +29,7 @@
                                 :label="childrenOne.name"
                                 :inset="inset"
                                 v-model="childrenOne.value"
+                                @change="childrenUpdateEvent($event, childrenOne)"
                                 hide-details
                             ></v-switch>
                             <v-container v-if="hasChildren(childrenOne)">
@@ -37,6 +39,7 @@
                                         :label="childrenTwo.name"
                                         :inset="inset"
                                         v-model="childrenTwo.value"
+                                        @change="childrenUpdateEvent($event, childrenTwo)"
                                         hide-details
                                     ></v-switch>
                                     <v-container v-if="hasChildren(childrenTwo)">
@@ -46,6 +49,7 @@
                                                 :label="childrenThree.name"
                                                 :inset="inset"
                                                 v-model="childrenThree.value"
+                                                @change="childrenUpdateEvent($event, childrenThree)"
                                                 hide-details
                                             ></v-switch>
                                             <v-container v-if="hasChildren(childrenThree)">
@@ -55,6 +59,7 @@
                                                         :label="childrenFour.name"
                                                         :inset="inset"
                                                         v-model="childrenFour.value"
+                                                        @change="childrenUpdateEvent($event, childrenFour)"
                                                         hide-details
                                                     ></v-switch>
                                                     <v-container v-if="hasChildren(childrenFour)">
@@ -64,6 +69,7 @@
                                                                 :label="childrenFive.name"
                                                                 :inset="inset"
                                                                 v-model="childrenFive.value"
+                                                                @change="childrenUpdateEvent($event, childrenFive)"
                                                                 hide-details
                                                             ></v-switch>
                                                         </div>
