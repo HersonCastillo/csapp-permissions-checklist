@@ -46,45 +46,763 @@ export default class PermissionsWeb extends Vue {
                 }
             ]
         },
-        history: {
-            name: 'History',
+        records: {
+            name: 'Records',
             id: 5,
             pid: 'B',
             isBoss: true,
             value: false,
-            childrens: []
+            childrens: [
+                {
+                    name: 'Logs',
+                    id: 6,
+                    pid: 'B',
+                    isBoss: false,
+                    value: false,
+                    childrens: []
+                },
+                {
+                    name: 'Map Attack',
+                    id: 7,
+                    pid: 'B',
+                    isBoss: false,
+                    value: false,
+                    childrens: []
+                },
+                {
+                    name: 'Filter',
+                    id: 8,
+                    pid: 'B',
+                    isBoss: false,
+                    value: false,
+                    childrens: []
+                },
+                {
+                    name: 'Advanced filter',
+                    id: 9,
+                    pid: 'B',
+                    isBoss: false,
+                    value: false,
+                    childrens: []
+                }
+            ]
         },
-        firewall: {
-            name: 'Firewall',
-            id: 6,
+        history: {
+            name: 'History',
+            id: 10,
             pid: 'C',
             isBoss: true,
             value: false,
             childrens: [
                 {
+                    name: 'Show success',
+                    id: 11,
+                    pid: 'C',
+                    isBoss: false,
+                    value: false,
+                    childrens: []
+                },
+                {
+                    name: 'Show error',
+                    id: 12,
+                    pid: 'C',
+                    isBoss: false,
+                    value: false,
+                    childrens: []
+                }
+            ]
+        },
+        noc_manager: {
+            name: 'NOC Manager',
+            id: 13,
+            pid: 'D',
+            isBoss: true,
+            value: false,
+            childrens: [
+                {
+                    name: 'Password',
+                    id: 14,
+                    pid: 'D',
+                    isBoss: false,
+                    value: false,
+                    childrens: []
+                },
+                {
+                    name: 'Set configuration',
+                    id: 15,
+                    pid: 'D',
+                    isBoss: false,
+                    value: false,
+                    childrens: []
+                }
+            ]
+        },
+        firewall: {
+            name: 'Firewall',
+            id: 16,
+            pid: 'E',
+            isBoss: true,
+            value: false,
+            childrens: [
+                {
                     name: 'Object List',
-                    id: 7,
-                    pid: 'C.A',
+                    id: 17,
+                    pid: 'E.A',
                     isBoss: true,
                     value: false,
                     childrens: [
                         {
-                            name: 'Add dynamic type',
-                            id: 8,
-                            pid: 'C.A',
+                            name: 'Add dynamic',
+                            id: 18,
+                            pid: 'E.A',
                             isBoss: false,
                             value: false,
                             childrens: []
                         },
                         {
-                            name: 'Delete dynamic type',
-                            id: 9,
-                            pid: 'C.A',
+                            name: 'Add network',
+                            id: 19,
+                            pid: 'E.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Delete dynamic',
+                            id: 20,
+                            pid: 'E.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Delete network',
+                            id: 21,
+                            pid: 'E.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Edit network',
+                            id: 22,
+                            pid: 'E.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Show dynamic',
+                            id: 23,
+                            pid: 'E.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Show network',
+                            id: 24,
+                            pid: 'E.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'See IP dynamic',
+                            id: 25,
+                            pid: 'E.A.A',
+                            isBoss: true,
+                            value: false,
+                            childrens: [
+                                {
+                                    name: 'Edit',
+                                    id: 26,
+                                    pid: 'E.A.A',
+                                    isBoss: false,
+                                    value: false,
+                                    childrens: []
+                                },
+                                {
+                                    name: 'Delete',
+                                    id: 27,
+                                    pid: 'E.A.A',
+                                    isBoss: false,
+                                    value: false,
+                                    childrens: []
+                                },
+                                {
+                                    name: 'List IP',
+                                    id: 28,
+                                    pid: 'E.A.A.A',
+                                    isBoss: true,
+                                    value: false,
+                                    childrens: [
+                                        {
+                                            name: 'Delete IP',
+                                            id: 29,
+                                            pid: 'E.A.A.A',
+                                            isBoss: false,
+                                            value: false,
+                                            childrens: []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: 'Access Rules',
+                    id: 30,
+                    pid: 'E.B',
+                    isBoss: true,
+                    value: false,
+                    childrens: [
+                        {
+                            name: 'Add editable rule',
+                            id: 31,
+                            pid: 'E.B',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Visibility editable',
+                            id: 32,
+                            pid: 'E.B',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Delete rule editable',
+                            id: 33,
+                            pid: 'E.B',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Show default',
+                            id: 34,
+                            pid: 'E.B',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Show editable',
+                            id: 35,
+                            pid: 'E.B',
                             isBoss: false,
                             value: false,
                             childrens: []
                         }
                     ]
+                },
+                {
+                    name: 'IP Request',
+                    id: 36,
+                    pid: 'E.C',
+                    isBoss: true,
+                    value: false,
+                    childrens: [
+                        {
+                            name: 'Accept request',
+                            id: 37,
+                            pid: 'E.C',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Decline request',
+                            id: 38,
+                            pid: 'E.C',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Show pending',
+                            id: 39,
+                            pid: 'E.C',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Show all',
+                            id: 40,
+                            pid: 'E.C',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        }
+                    ]
+                }
+            ]
+        },
+        layers: {
+            name: 'Layers',
+            id: 41,
+            pid: 'F',
+            isBoss: true,
+            value: false,
+            childrens: [
+                {
+                    name: 'SOC 5G',
+                    id: 42,
+                    pid: 'F.A',
+                    isBoss: true,
+                    value: false,
+                    childrens: [
+                        {
+                            name: 'Edit block',
+                            id: 43,
+                            pid: 'F.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Edit allow',
+                            id: 44,
+                            pid: 'F.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Delete block',
+                            id: 45,
+                            pid: 'F.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Delete allow',
+                            id: 46,
+                            pid: 'F.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Add IP block',
+                            id: 47,
+                            pid: 'F.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Add IP allow',
+                            id: 48,
+                            pid: 'F.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Show block',
+                            id: 49,
+                            pid: 'F.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Show allow',
+                            id: 50,
+                            pid: 'F.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        }
+                    ]
+                },
+                {
+                    name: 'Checkpoint',
+                    id: 51,
+                    pid: 'F.B',
+                    isBoss: true,
+                    value: false,
+                    childrens: [
+                        {
+                            name: 'Into checkpoint',
+                            id: 52,
+                            pid: 'F.B',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Outside checkpoint',
+                            id: 53,
+                            pid: 'F.B',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Delete',
+                            id: 54,
+                            pid: 'F.B',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        }
+                    ]
+                },
+                {
+                    name: 'Gray List',
+                    id: 55,
+                    pid: 'F.C',
+                    isBoss: true,
+                    value: false,
+                    childrens: [
+                        {
+                            name: 'Accept request SOC',
+                            id: 56,
+                            pid: 'F.C',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Decline request SOC',
+                            id: 57,
+                            pid: 'F.C',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Show Gray List',
+                            id: 58,
+                            pid: 'F.C',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Shpw SOC Request IP',
+                            id: 59,
+                            pid: 'F.C',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        }
+                    ]
+                }
+            ]
+        },
+        access_control: {
+            name: 'Access Control',
+            id: 60,
+            pid: 'G',
+            isBoss: true,
+            value: false,
+            childrens: [
+                {
+                    name: 'Companies',
+                    id: 61,
+                    pid: 'G.A',
+                    isBoss: true,
+                    value: false,
+                    childrens: [
+                        {
+                            name: 'Add',
+                            id: 62,
+                            pid: 'G.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'IP White List',
+                            id: 63,
+                            pid: 'G.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Edit',
+                            id: 64,
+                            pid: 'G.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Delete',
+                            id: 65,
+                            pid: 'G.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Disable',
+                            id: 66,
+                            pid: 'G.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Change group',
+                            id: 67,
+                            pid: 'G.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        }
+                    ]
+                },
+                {
+                    name: 'Users',
+                    id: 68,
+                    pid: 'G.B',
+                    isBoss: true,
+                    value: false,
+                    childrens: [
+                        {
+                            name: 'Add',
+                            id: 69,
+                            pid: 'G.B',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Change password',
+                            id: 70,
+                            pid: 'G.B',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Delete',
+                            id: 71,
+                            pid: 'G.B',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        }
+                    ]
+                },
+                {
+                    name: 'Blocked Users',
+                    id: 72,
+                    pid: 'G.C',
+                    isBoss: true,
+                    value: false,
+                    childrens: [
+                        {
+                            name: 'Unlock',
+                            id: 73,
+                            pid: 'G.C',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        }
+                    ]
+                }
+            ]
+        },
+        companies_ip: {
+            name: 'Companies IP',
+            id: 74,
+            pid: 'H',
+            isBoss: true,
+            value: false,
+            childrens: [
+                {
+                    name: 'Add IP',
+                    id: 75,
+                    pid: 'H',
+                    isBoss: false,
+                    value: false,
+                    childrens: []
+                },
+                {
+                    name: 'Delete IP',
+                    id: 76,
+                    pid: 'H',
+                    isBoss: false,
+                    value: false,
+                    childrens: []
+                },
+                {
+                    name: 'Edit IP',
+                    id: 77,
+                    pid: 'H',
+                    isBoss: false,
+                    value: false,
+                    childrens: []
+                }
+            ]
+        },
+        sync: {
+            name: 'Sync',
+            id: 78,
+            pid: 'I',
+            isBoss: true,
+            value: false,
+            childrens: []
+        },
+        install_policies: {
+            name: 'Install Policies',
+            id: 79,
+            pid: 'J',
+            isBoss: true,
+            value: false,
+            childrens: []
+        },
+        browser_warns: {
+            name: 'Browser Warning',
+            id: 80,
+            pid: 'K',
+            isBoss: true,
+            value: false,
+            childrens: []
+        },
+        mikrotik_tools: {
+            name: 'Mikrotik Tools',
+            id: 81,
+            pid: 'L',
+            isBoss: true,
+            value: false,
+            childrens: [
+                {
+                    name: 'Users',
+                    id: 82,
+                    pid: 'L.A',
+                    isBoss: true,
+                    value: false,
+                    childrens: [
+                        {
+                            name: 'Usage',
+                            id: 83,
+                            pid: 'L.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Status',
+                            id: 84,
+                            pid: 'L.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        },
+                        {
+                            name: 'Delete',
+                            id: 84,
+                            pid: 'L.A',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        }
+                    ]
+                },
+                {
+                    name: 'Groups',
+                    id: 86,
+                    pid: 'L.B',
+                    isBoss: true,
+                    value: false,
+                    childrens: [
+                        {
+                            name: 'Add',
+                            id: 87,
+                            pid: 'L.B',
+                            isBoss: false,
+                            value: false,
+                            childrens: []
+                        }
+                    ]
+                }
+            ]
+        },
+        client_area: {
+            name: 'Client Area',
+            id: 88,
+            pid: 'M',
+            isBoss: true,
+            value: false,
+            childrens: [
+                {
+                    name: 'Personal configuration',
+                    id: 89,
+                    pid: 'M',
+                    isBoss: false,
+                    value: false,
+                    childrens: []
+                },
+                {
+                    name: 'Payment records',
+                    id: 90,
+                    pid: 'M',
+                    isBoss: false,
+                    value: false,
+                    childrens: []
+                },
+                {
+                    name: 'Manually Pay',
+                    id: 91,
+                    pid: 'M',
+                    isBoss: false,
+                    value: false,
+                    childrens: []
+                }
+            ]
+        },
+        company_profile: {
+            name: 'Company Profile',
+            id: 92,
+            pid: 'N',
+            isBoss: true,
+            value: false,
+            childrens: [
+                {
+                    name: 'Chart',
+                    id: 93,
+                    pid: 'N',
+                    isBoss: false,
+                    value: false,
+                    childrens: []
+                }
+            ]
+        },
+        report: {
+            name: 'Reports',
+            id: 94,
+            pid: 'O',
+            isBoss: true,
+            value: false,
+            childrens: [
+                {
+                    name: 'Generate',
+                    id: 95,
+                    pid: 'O',
+                    isBoss: false,
+                    value: false,
+                    childrens: []
+                },
+                {
+                    name: 'Download',
+                    id: 96,
+                    pid: 'O',
+                    isBoss: false,
+                    value: false,
+                    childrens: []
                 }
             ]
         }
@@ -148,8 +866,8 @@ export default class PermissionsWeb extends Vue {
         return permissions;
     }
     filterPermissions(permissions: string[]): string[] {
-        let expressionCommand: RegExp = /^[A-Z]([.][A-Z])?[:]?([\d]{1,3})?$/;
-        let command: RegExp = /^[A-Z]([.][A-Z])?[:]?/;
+        let expressionCommand: RegExp = /^[A-Z](([.][A-Z]){1,3})?[:]?([\d]{1,3})?$/;
+        let command: RegExp = /^[A-Z](([.][A-Z]){1,3})?[:]?/;
         let argument: RegExp = /[:]?([\d]{1,3})?$/;
         
         let blacklist: any[] = [];
