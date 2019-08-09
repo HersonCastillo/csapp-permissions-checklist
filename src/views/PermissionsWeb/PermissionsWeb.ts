@@ -95,6 +95,17 @@ export default class PermissionsWeb extends Vue {
         keys.forEach(el => permissions.push(this.permissions[el] as any));
         return permissions;
     }
+    getLinealPermissions(permissions: PermissionAttribute[]): PermissionAttribute[] {
+        let response: PermissionAttribute[] = [];
+        permissions.forEach(element => {
+            response.push(element);
+            if(this.hasChildren(element)){
+                let lineal: PermissionAttribute[] = this.getLinealPermissions(element.childrens);
+                response.push(...lineal);
+            }
+        });
+        return response;
+    }
     getPermissionsBossAttributes(): PermissionAttribute[] {
         let response: PermissionAttribute[] = [];
         for(let item in this.permissions){
@@ -103,15 +114,7 @@ export default class PermissionsWeb extends Vue {
         return response;
     }
     getPermissionByPid(pid: string, permissions: PermissionAttribute[]): PermissionAttribute | null {
-        let intent = permissions.find(element => {
-            if(element.isBoss && element.pid == pid){
-                return element;
-            } else {
-                if(this.hasChildren(element)){
-                    return this.getPermissionByPid(pid, element.childrens);
-                }
-            }
-        });
+        let intent = permissions.find(element => element.isBoss && element.pid == pid);
         return intent !== undefined ? intent : null;
     }
     getChildrens(attr: PermissionAttribute): PermissionAttribute[] {
@@ -184,7 +187,10 @@ export default class PermissionsWeb extends Vue {
             }
         } else {
             let bossName: string = attr.pid;
-            console.log(this.getPermissionByPid(bossName, this.getPermissionsBossAttributes()));
+            let element: PermissionAttribute | null = this.getPermissionByPid(bossName, this.getLinealPermissions(this.getPermissionsBossAttributes()));
+            if(element){
+                element.value = e;
+            }
         }
     }
 }
