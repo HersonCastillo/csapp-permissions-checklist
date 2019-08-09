@@ -3,6 +3,8 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component
 export default class PermissionsWeb extends Vue {
     public inset: boolean = true;
+    public disabled: boolean = false;
+    public selectedAll: boolean = false;
     public response: string = '';
     public permissions: PermissionsModule = {
         dashboard: {
@@ -488,7 +490,7 @@ export default class PermissionsWeb extends Vue {
                             childrens: []
                         },
                         {
-                            name: 'Shpw SOC Request IP',
+                            name: 'Show SOC Request IP',
                             id: 59,
                             pid: 'F.C',
                             isBoss: false,
@@ -912,13 +914,19 @@ export default class PermissionsWeb extends Vue {
                 }
             }
         }
-        this.response = this.filterPermissions(permissions).join(';');
+        if(this.disabled){
+            this.response = '-';
+        } else if(this.selectedAll){
+            this.response = '*';
+        } else {
+            this.response = this.filterPermissions(permissions).join(';');
+        }
     }
-    resetPermissions(): void {
+    resetPermissions(flag?: boolean): void {
         this.response = '';
         for(let item in this.permissions){
             let element = this.permissions[item];
-            this.setChildrenValue(element, false);
+            this.setChildrenValue(element, flag || false);
         }
     }
     setChildrenValue(props: PermissionAttribute, val: boolean): void {
@@ -943,6 +951,12 @@ export default class PermissionsWeb extends Vue {
             if(element){
                 element.value = e;
             }
+        }
+    }
+    disableSystemAccess(e: boolean): void {
+        if(e){
+            this.selectedAll = false;
+            this.resetPermissions(false);
         }
     }
 }

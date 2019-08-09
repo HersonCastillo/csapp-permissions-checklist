@@ -5,19 +5,35 @@
                 <v-card dark color="primary">
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn @click="resetPermissions">Reset Permissions</v-btn>
+                        <v-btn @click="() => { selectedAll = false; resetPermissions(false); }">Reset Permissions</v-btn>
                         <v-btn @click="getPermissions" :color="'success'">Get Permissions</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-flex>
             <v-flex xs12>
-                <h1>{{response}}</h1>
+                <span>
+                    <b>{{response}}</b>
+                </span>
             </v-flex>
             <v-flex xs12 sm4 md4>
+                <v-checkbox
+                    v-model="disabled"
+                    label="Disable system access"
+                    @change="disableSystemAccess($event)"
+                    hide-details
+                ></v-checkbox>
+                <v-checkbox
+                    v-model="selectedAll"
+                    label="Select all"
+                    :disabled="disabled"
+                    @change="resetPermissions($event)"
+                    hide-details
+                ></v-checkbox>
                 <v-container class="margin-x3" v-for="(item, index) in getKeysForPermissions()" :key="index">
                     <v-switch
                         :label="item.name"
                         :inset="inset"
+                        :disabled="disabled"
                         v-model="item.value"
                         @change="childrenUpdateEvent($event, item)"
                         hide-details
@@ -28,6 +44,7 @@
                                 class="margin-x3"
                                 :label="childrenOne.name"
                                 :inset="inset"
+                                :disabled="disabled"
                                 v-model="childrenOne.value"
                                 @change="childrenUpdateEvent($event, childrenOne)"
                                 hide-details
@@ -38,6 +55,7 @@
                                         class="margin-x4"
                                         :label="childrenTwo.name"
                                         :inset="inset"
+                                        :disabled="disabled"
                                         v-model="childrenTwo.value"
                                         @change="childrenUpdateEvent($event, childrenTwo)"
                                         hide-details
@@ -48,6 +66,7 @@
                                                 class="margin-x5"
                                                 :label="childrenThree.name"
                                                 :inset="inset"
+                                                :disabled="disabled"
                                                 v-model="childrenThree.value"
                                                 @change="childrenUpdateEvent($event, childrenThree)"
                                                 hide-details
@@ -58,6 +77,7 @@
                                                         class="margin-x6"
                                                         :label="childrenFour.name"
                                                         :inset="inset"
+                                                        :disabled="disabled"
                                                         v-model="childrenFour.value"
                                                         @change="childrenUpdateEvent($event, childrenFour)"
                                                         hide-details
@@ -68,6 +88,7 @@
                                                                 class="margin-x7"
                                                                 :label="childrenFive.name"
                                                                 :inset="inset"
+                                                                :disabled="disabled"
                                                                 v-model="childrenFive.value"
                                                                 @change="childrenUpdateEvent($event, childrenFive)"
                                                                 hide-details
