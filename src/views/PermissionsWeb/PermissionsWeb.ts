@@ -147,6 +147,40 @@ export default class PermissionsWeb extends Vue {
         });
         return permissions;
     }
+    filterPermissions(permissions: string[]): string[] {
+        let expressionCommand: RegExp = /^[A-Z]([.][A-Z])?[:]?([\d]{1,3})?$/;
+        let command: RegExp = /^[A-Z]([.][A-Z])?[:]?/;
+        let argument: RegExp = /[:]?([\d]{1,3})?$/;
+        
+        let blacklist: any[] = [];
+        let whitelist: string[] = [];
+        for(let item of permissions){
+            if(expressionCommand.test(item)){
+                let replacedCommand = item.replace(new RegExp(argument, 'g'), '');
+                let replacedArguments = item.replace(new RegExp(command, 'g'), '');
+
+                let intent = blacklist.find(r => r.pid == replacedCommand);
+                if(!intent){
+                    blacklist.push({
+                        pid: replacedCommand,
+                        childrens: replacedArguments != '' ? [replacedArguments] : []
+                    });
+                } else {
+                    if(replacedArguments != ''){
+                        intent.childrens.push(replacedArguments);
+                    }
+                }
+            }
+        }
+        for(let item of blacklist){
+            if(item.childrens.length > 0){
+                whitelist.push(`${item.pid}:${item.childrens.join(',')}`);
+            } else {
+                whitelist.push(item.pid);
+            }
+        }
+        return whitelist;
+    }
     getPermissions(): void {
         let permissions: string[] = [];
         for(let key in this.permissions){
@@ -160,7 +194,7 @@ export default class PermissionsWeb extends Vue {
                 }
             }
         }
-        this.response = permissions.join(';');
+        this.response = this.filterPermissions(permissions).join(';');
     }
     resetPermissions(): void {
         this.response = '';
