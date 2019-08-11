@@ -31,7 +31,7 @@
                 ></v-checkbox>
                 <v-container class="margin-x3" v-for="(item, index) in getKeysForPermissions()" :key="index">
                     <v-switch
-                        :label="item.name"
+                        :label="`${item.isBoss ? `${item.pid} >` : ''} ${item.name} (${item.id})`"
                         :inset="inset"
                         :disabled="disabled"
                         v-model="item.value"
@@ -42,7 +42,7 @@
                         <div v-for="(childrenOne, indexOne) in getChildrens(item)" :key="indexOne">
                             <v-switch
                                 class="margin-x3"
-                                :label="childrenOne.name"
+                                :label="`${childrenOne.isBoss ? `${childrenOne.pid} >` : ''} ${childrenOne.name} (${childrenOne.id})`"
                                 :inset="inset"
                                 :disabled="disabled"
                                 v-model="childrenOne.value"
@@ -53,7 +53,7 @@
                                 <div v-for="(childrenTwo, indexTwo) in getChildrens(childrenOne)" :key="indexTwo">
                                     <v-switch
                                         class="margin-x4"
-                                        :label="childrenTwo.name"
+                                        :label="`${childrenTwo.isBoss ? `${childrenTwo.pid} >` : ''} ${childrenTwo.name} (${childrenTwo.id})`"
                                         :inset="inset"
                                         :disabled="disabled"
                                         v-model="childrenTwo.value"
@@ -64,7 +64,7 @@
                                         <div v-for="(childrenThree, indexThree) in getChildrens(childrenTwo)" :key="indexThree">
                                             <v-switch
                                                 class="margin-x5"
-                                                :label="childrenThree.name"
+                                                :label="`${childrenThree.isBoss ? `${childrenThree.pid} >` : ''} ${childrenThree.name} (${childrenThree.id})`"
                                                 :inset="inset"
                                                 :disabled="disabled"
                                                 v-model="childrenThree.value"
@@ -75,7 +75,7 @@
                                                 <div v-for="(childrenFour, indexFour) in getChildrens(childrenThree)" :key="indexFour">
                                                     <v-switch
                                                         class="margin-x6"
-                                                        :label="childrenFour.name"
+                                                        :label="`${childrenFour.isBoss ? `${childrenFour.pid} >` : ''} ${childrenFour.name} (${childrenFour.id})`"
                                                         :inset="inset"
                                                         :disabled="disabled"
                                                         v-model="childrenFour.value"
@@ -86,7 +86,7 @@
                                                         <div v-for="(childrenFive, indexFive) in getChildrens(childrenFour)" :key="indexFive">
                                                             <v-switch
                                                                 class="margin-x7"
-                                                                :label="childrenFive.name"
+                                                                :label="`${childrenFive.isBoss ? `${childrenFive.pid} >` : ''} ${childrenFive.name} ${childrenFive.id}`"
                                                                 :inset="inset"
                                                                 :disabled="disabled"
                                                                 v-model="childrenFive.value"

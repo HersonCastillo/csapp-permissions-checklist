@@ -11,6 +11,7 @@ export default class PermissionsWeb extends Vue {
             id: 0,
             name: 'Dashboard',
             pid: 'A',
+            fatherPid: null,
             isBoss: true,
             value: false,
             childrens: [
@@ -18,6 +19,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Checkpoint',
                     id: 1,
                     pid: 'A',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -26,6 +28,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Palo Alto',
                     id: 2,
                     pid: 'A',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -34,6 +37,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Fortinet',
                     id: 3,
                     pid: 'A',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -42,6 +46,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'SonicWall',
                     id: 4,
                     pid: 'A',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -52,6 +57,7 @@ export default class PermissionsWeb extends Vue {
             name: 'Records',
             id: 5,
             pid: 'B',
+            fatherPid: null,
             isBoss: true,
             value: false,
             childrens: [
@@ -59,6 +65,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Logs',
                     id: 6,
                     pid: 'B',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -67,6 +74,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Map Attack',
                     id: 7,
                     pid: 'B',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -75,6 +83,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Filter',
                     id: 8,
                     pid: 'B',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -83,6 +92,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Advanced filter',
                     id: 9,
                     pid: 'B',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -93,6 +103,7 @@ export default class PermissionsWeb extends Vue {
             name: 'History',
             id: 10,
             pid: 'C',
+            fatherPid: null,
             isBoss: true,
             value: false,
             childrens: [
@@ -100,6 +111,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Show success',
                     id: 11,
                     pid: 'C',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -108,6 +120,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Show error',
                     id: 12,
                     pid: 'C',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -118,6 +131,7 @@ export default class PermissionsWeb extends Vue {
             name: 'NOC Manager',
             id: 13,
             pid: 'D',
+            fatherPid: null,
             isBoss: true,
             value: false,
             childrens: [
@@ -125,6 +139,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Password',
                     id: 14,
                     pid: 'D',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -133,6 +148,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Set configuration',
                     id: 15,
                     pid: 'D',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -143,6 +159,7 @@ export default class PermissionsWeb extends Vue {
             name: 'Firewall',
             id: 16,
             pid: 'E',
+            fatherPid: null,
             isBoss: true,
             value: false,
             childrens: [
@@ -150,6 +167,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Object List',
                     id: 17,
                     pid: 'E.A',
+                    fatherPid: 'E',
                     isBoss: true,
                     value: false,
                     childrens: [
@@ -157,6 +175,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Add dynamic',
                             id: 18,
                             pid: 'E.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -165,6 +184,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Add network',
                             id: 19,
                             pid: 'E.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -173,6 +193,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Delete dynamic',
                             id: 20,
                             pid: 'E.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -181,6 +202,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Delete network',
                             id: 21,
                             pid: 'E.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -189,6 +211,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Edit network',
                             id: 22,
                             pid: 'E.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -197,6 +220,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Show dynamic',
                             id: 23,
                             pid: 'E.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -205,6 +229,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Show network',
                             id: 24,
                             pid: 'E.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -213,6 +238,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'See IP dynamic',
                             id: 25,
                             pid: 'E.A.A',
+                            fatherPid: 'E.A',
                             isBoss: true,
                             value: false,
                             childrens: [
@@ -220,6 +246,7 @@ export default class PermissionsWeb extends Vue {
                                     name: 'Edit',
                                     id: 26,
                                     pid: 'E.A.A',
+                                    fatherPid: null,
                                     isBoss: false,
                                     value: false,
                                     childrens: []
@@ -228,6 +255,7 @@ export default class PermissionsWeb extends Vue {
                                     name: 'Delete',
                                     id: 27,
                                     pid: 'E.A.A',
+                                    fatherPid: null,
                                     isBoss: false,
                                     value: false,
                                     childrens: []
@@ -236,6 +264,7 @@ export default class PermissionsWeb extends Vue {
                                     name: 'List IP',
                                     id: 28,
                                     pid: 'E.A.A.A',
+                                    fatherPid: 'E.A.A',
                                     isBoss: true,
                                     value: false,
                                     childrens: [
@@ -243,6 +272,7 @@ export default class PermissionsWeb extends Vue {
                                             name: 'Delete IP',
                                             id: 29,
                                             pid: 'E.A.A.A',
+                                            fatherPid: null,
                                             isBoss: false,
                                             value: false,
                                             childrens: []
@@ -257,6 +287,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Access Rules',
                     id: 30,
                     pid: 'E.B',
+                    fatherPid: 'E',
                     isBoss: true,
                     value: false,
                     childrens: [
@@ -264,6 +295,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Add editable rule',
                             id: 31,
                             pid: 'E.B',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -272,6 +304,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Visibility editable',
                             id: 32,
                             pid: 'E.B',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -280,6 +313,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Delete rule editable',
                             id: 33,
                             pid: 'E.B',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -288,6 +322,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Show default',
                             id: 34,
                             pid: 'E.B',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -296,6 +331,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Show editable',
                             id: 35,
                             pid: 'E.B',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -306,6 +342,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'IP Request',
                     id: 36,
                     pid: 'E.C',
+                    fatherPid: 'E',
                     isBoss: true,
                     value: false,
                     childrens: [
@@ -313,6 +350,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Accept request',
                             id: 37,
                             pid: 'E.C',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -321,6 +359,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Decline request',
                             id: 38,
                             pid: 'E.C',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -329,6 +368,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Show pending',
                             id: 39,
                             pid: 'E.C',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -337,6 +377,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Show all',
                             id: 40,
                             pid: 'E.C',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -349,6 +390,7 @@ export default class PermissionsWeb extends Vue {
             name: 'Layers',
             id: 41,
             pid: 'F',
+            fatherPid: null,
             isBoss: true,
             value: false,
             childrens: [
@@ -356,6 +398,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'SOC 5G',
                     id: 42,
                     pid: 'F.A',
+                    fatherPid: 'F',
                     isBoss: true,
                     value: false,
                     childrens: [
@@ -363,6 +406,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Edit block',
                             id: 43,
                             pid: 'F.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -371,6 +415,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Edit allow',
                             id: 44,
                             pid: 'F.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -379,6 +424,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Delete block',
                             id: 45,
                             pid: 'F.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -387,6 +433,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Delete allow',
                             id: 46,
                             pid: 'F.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -395,6 +442,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Add IP block',
                             id: 47,
                             pid: 'F.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -403,6 +451,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Add IP allow',
                             id: 48,
                             pid: 'F.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -411,6 +460,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Show block',
                             id: 49,
                             pid: 'F.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -419,6 +469,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Show allow',
                             id: 50,
                             pid: 'F.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -429,6 +480,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Checkpoint',
                     id: 51,
                     pid: 'F.B',
+                    fatherPid: 'F',
                     isBoss: true,
                     value: false,
                     childrens: [
@@ -436,6 +488,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Into checkpoint',
                             id: 52,
                             pid: 'F.B',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -444,6 +497,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Outside checkpoint',
                             id: 53,
                             pid: 'F.B',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -452,6 +506,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Delete',
                             id: 54,
                             pid: 'F.B',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -462,6 +517,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Gray List',
                     id: 55,
                     pid: 'F.C',
+                    fatherPid: 'F',
                     isBoss: true,
                     value: false,
                     childrens: [
@@ -469,6 +525,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Accept request SOC',
                             id: 56,
                             pid: 'F.C',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -477,6 +534,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Decline request SOC',
                             id: 57,
                             pid: 'F.C',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -485,6 +543,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Show Gray List',
                             id: 58,
                             pid: 'F.C',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -493,6 +552,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Show SOC Request IP',
                             id: 59,
                             pid: 'F.C',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -505,6 +565,7 @@ export default class PermissionsWeb extends Vue {
             name: 'Access Control',
             id: 60,
             pid: 'G',
+            fatherPid: null,
             isBoss: true,
             value: false,
             childrens: [
@@ -512,6 +573,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Companies',
                     id: 61,
                     pid: 'G.A',
+                    fatherPid: 'G',
                     isBoss: true,
                     value: false,
                     childrens: [
@@ -519,6 +581,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Add',
                             id: 62,
                             pid: 'G.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -527,6 +590,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'IP White List',
                             id: 63,
                             pid: 'G.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -535,6 +599,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Edit',
                             id: 64,
                             pid: 'G.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -543,6 +608,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Delete',
                             id: 65,
                             pid: 'G.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -551,6 +617,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Disable',
                             id: 66,
                             pid: 'G.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -559,6 +626,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Change group',
                             id: 67,
                             pid: 'G.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -569,6 +637,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Users',
                     id: 68,
                     pid: 'G.B',
+                    fatherPid: 'G',
                     isBoss: true,
                     value: false,
                     childrens: [
@@ -576,6 +645,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Add',
                             id: 69,
                             pid: 'G.B',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -584,6 +654,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Change password',
                             id: 70,
                             pid: 'G.B',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -592,6 +663,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Delete',
                             id: 71,
                             pid: 'G.B',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -602,6 +674,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Blocked Users',
                     id: 72,
                     pid: 'G.C',
+                    fatherPid: 'G',
                     isBoss: true,
                     value: false,
                     childrens: [
@@ -609,6 +682,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Unlock',
                             id: 73,
                             pid: 'G.C',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -621,6 +695,7 @@ export default class PermissionsWeb extends Vue {
             name: 'Companies IP',
             id: 74,
             pid: 'H',
+            fatherPid: null,
             isBoss: true,
             value: false,
             childrens: [
@@ -628,6 +703,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Add IP',
                     id: 75,
                     pid: 'H',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -636,6 +712,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Delete IP',
                     id: 76,
                     pid: 'H',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -644,6 +721,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Edit IP',
                     id: 77,
                     pid: 'H',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -654,6 +732,7 @@ export default class PermissionsWeb extends Vue {
             name: 'Sync',
             id: 78,
             pid: 'I',
+            fatherPid: null,
             isBoss: true,
             value: false,
             childrens: []
@@ -662,6 +741,7 @@ export default class PermissionsWeb extends Vue {
             name: 'Install Policies',
             id: 79,
             pid: 'J',
+            fatherPid: null,
             isBoss: true,
             value: false,
             childrens: []
@@ -670,6 +750,7 @@ export default class PermissionsWeb extends Vue {
             name: 'Browser Warning',
             id: 80,
             pid: 'K',
+            fatherPid: null,
             isBoss: true,
             value: false,
             childrens: []
@@ -678,6 +759,7 @@ export default class PermissionsWeb extends Vue {
             name: 'Mikrotik Tools',
             id: 81,
             pid: 'L',
+            fatherPid: null,
             isBoss: true,
             value: false,
             childrens: [
@@ -685,6 +767,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Users',
                     id: 82,
                     pid: 'L.A',
+                    fatherPid: 'L',
                     isBoss: true,
                     value: false,
                     childrens: [
@@ -692,6 +775,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Usage',
                             id: 83,
                             pid: 'L.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -700,6 +784,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Status',
                             id: 84,
                             pid: 'L.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -708,6 +793,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Delete',
                             id: 84,
                             pid: 'L.A',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -718,6 +804,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Groups',
                     id: 86,
                     pid: 'L.B',
+                    fatherPid: 'L',
                     isBoss: true,
                     value: false,
                     childrens: [
@@ -725,6 +812,7 @@ export default class PermissionsWeb extends Vue {
                             name: 'Add',
                             id: 87,
                             pid: 'L.B',
+                            fatherPid: null,
                             isBoss: false,
                             value: false,
                             childrens: []
@@ -737,6 +825,7 @@ export default class PermissionsWeb extends Vue {
             name: 'Client Area',
             id: 88,
             pid: 'M',
+            fatherPid: null,
             isBoss: true,
             value: false,
             childrens: [
@@ -744,6 +833,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Personal configuration',
                     id: 89,
                     pid: 'M',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -752,6 +842,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Payment records',
                     id: 90,
                     pid: 'M',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -760,6 +851,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Manually Pay',
                     id: 91,
                     pid: 'M',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -770,6 +862,7 @@ export default class PermissionsWeb extends Vue {
             name: 'Company Profile',
             id: 92,
             pid: 'N',
+            fatherPid: null,
             isBoss: true,
             value: false,
             childrens: [
@@ -777,6 +870,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Chart',
                     id: 93,
                     pid: 'N',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -787,6 +881,7 @@ export default class PermissionsWeb extends Vue {
             name: 'Reports',
             id: 94,
             pid: 'O',
+            fatherPid: null,
             isBoss: true,
             value: false,
             childrens: [
@@ -794,6 +889,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Generate',
                     id: 95,
                     pid: 'O',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -802,6 +898,7 @@ export default class PermissionsWeb extends Vue {
                     name: 'Download',
                     id: 96,
                     pid: 'O',
+                    fatherPid: null,
                     isBoss: false,
                     value: false,
                     childrens: []
@@ -819,7 +916,7 @@ export default class PermissionsWeb extends Vue {
         let response: PermissionAttribute[] = [];
         permissions.forEach(element => {
             response.push(element);
-            if(this.hasChildren(element)){
+            if (this.hasChildren(element)) {
                 let lineal: PermissionAttribute[] = this.getLinealPermissions(element.childrens);
                 response.push(...lineal);
             }
@@ -828,7 +925,7 @@ export default class PermissionsWeb extends Vue {
     }
     getPermissionsBossAttributes(): PermissionAttribute[] {
         let response: PermissionAttribute[] = [];
-        for(let item in this.permissions){
+        for (let item in this.permissions) {
             response.push(this.permissions[item]);
         }
         return response;
@@ -846,20 +943,20 @@ export default class PermissionsWeb extends Vue {
     getPermissionsForChildrens(childrens: PermissionAttribute[]): string[] {
         let permissions: string[] = [];
         childrens.forEach(el => {
-            if(el.isBoss){
-                if(el.value){
+            if (el.isBoss) {
+                if (el.value) {
                     permissions.push(el.pid);
                 } else {
-                    if(this.hasChildren(el)){
+                    if (this.hasChildren(el)) {
                         let childrenPermissions: string[] = this.getPermissionsForChildrens(el.childrens);
                         permissions.push(...childrenPermissions);
                     }
                 }
             } else {
-                if(el.value){
+                if (el.value) {
                     permissions.push(`${el.pid}:${el.id}`);
                 }
-                if(this.hasChildren(el)){
+                if (this.hasChildren(el)) {
                     let childrenPermissions: string[] = this.getPermissionsForChildrens(el.childrens);
                     permissions.push(...childrenPermissions);
                 }
@@ -871,29 +968,29 @@ export default class PermissionsWeb extends Vue {
         let expressionCommand: RegExp = /^[A-Z](([.][A-Z]){1,3})?[:]?([\d]{1,3})?$/;
         let command: RegExp = /^[A-Z](([.][A-Z]){1,3})?[:]?/;
         let argument: RegExp = /[:]?([\d]{1,3})?$/;
-        
+
         let blacklist: any[] = [];
         let whitelist: string[] = [];
-        for(let item of permissions){
-            if(expressionCommand.test(item)){
+        for (let item of permissions) {
+            if (expressionCommand.test(item)) {
                 let replacedCommand = item.replace(new RegExp(argument, 'g'), '');
                 let replacedArguments = item.replace(new RegExp(command, 'g'), '');
 
                 let intent = blacklist.find(r => r.pid == replacedCommand);
-                if(!intent){
+                if (!intent) {
                     blacklist.push({
                         pid: replacedCommand,
                         childrens: replacedArguments != '' ? [replacedArguments] : []
                     });
                 } else {
-                    if(replacedArguments != ''){
+                    if (replacedArguments != '') {
                         intent.childrens.push(replacedArguments);
                     }
                 }
             }
         }
-        for(let item of blacklist){
-            if(item.childrens.length > 0){
+        for (let item of blacklist) {
+            if (item.childrens.length > 0) {
                 whitelist.push(`${item.pid}:${item.childrens.join(',')}`);
             } else {
                 whitelist.push(item.pid);
@@ -903,10 +1000,10 @@ export default class PermissionsWeb extends Vue {
     }
     getPermissions(): void {
         let permissions: string[] = [];
-        for(let key in this.permissions){
+        for (let key in this.permissions) {
             let element = this.permissions[key];
-            if(element.isBoss){
-                if(element.value){
+            if (element.isBoss) {
+                if (element.value) {
                     permissions.push(element.pid);
                 } else {
                     let childrenPermissions = this.getPermissionsForChildrens(element.childrens);
@@ -914,9 +1011,9 @@ export default class PermissionsWeb extends Vue {
                 }
             }
         }
-        if(this.disabled){
+        if (this.disabled) {
             this.response = '-';
-        } else if(this.selectedAll){
+        } else if (this.selectedAll) {
             this.response = '*';
         } else {
             this.response = this.filterPermissions(permissions).join(';');
@@ -924,22 +1021,22 @@ export default class PermissionsWeb extends Vue {
     }
     resetPermissions(flag?: boolean): void {
         this.response = '';
-        for(let item in this.permissions){
+        for (let item in this.permissions) {
             let element = this.permissions[item];
             this.setChildrenValue(element, flag || false);
         }
     }
     setChildrenValue(props: PermissionAttribute, val: boolean): void {
         props.value = val;
-        if(this.hasChildren(props)){
+        if (this.hasChildren(props)) {
             props.childrens.forEach(el => {
                 this.setChildrenValue(el, val);
             });
         }
     }
     childrenUpdateEvent(e: boolean, attr: PermissionAttribute): void {
-        if(attr.isBoss || e){
-            if(attr.childrens.length > 0){
+        if (attr.isBoss || e) {
+            if (attr.childrens.length > 0) {
                 attr.childrens.forEach(element => {
                     element.value = e;
                     this.childrenUpdateEvent(e, element);
@@ -947,14 +1044,26 @@ export default class PermissionsWeb extends Vue {
             }
         } else {
             let bossName: string = attr.pid;
-            let element: PermissionAttribute | null = this.getPermissionByPid(bossName, this.getLinealPermissions(this.getPermissionsBossAttributes()));
-            if(element){
+            let permissionsAttributes: PermissionAttribute[] = this.getLinealPermissions(this.getPermissionsBossAttributes());
+            let element: PermissionAttribute | null = this.getPermissionByPid(bossName, permissionsAttributes);
+            if (element) {
+                if (element.fatherPid) {
+                    let elementFather: PermissionAttribute | null = this.getPermissionByPid(element.fatherPid, permissionsAttributes);
+                    while (elementFather) {
+                        elementFather.value = e;
+                        if (elementFather.fatherPid) {
+                            elementFather = this.getPermissionByPid(elementFather.fatherPid, permissionsAttributes);
+                        } else {
+                            elementFather = null;
+                        }
+                    }
+                }
                 element.value = e;
             }
         }
     }
     disableSystemAccess(e: boolean): void {
-        if(e){
+        if (e) {
             this.selectedAll = false;
             this.resetPermissions(false);
         }
@@ -968,6 +1077,7 @@ interface PermissionAttribute {
     name: string;
     id: number;
     pid: string;
+    fatherPid: string | null;
     isBoss: boolean;
     value: boolean;
     childrens: PermissionAttribute[];
