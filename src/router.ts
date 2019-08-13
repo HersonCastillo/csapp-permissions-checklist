@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from './views/Home/Home.vue';
-import PermissionsWeb from './views/PermissionsWeb/PermissionsWeb';
+import PermissionsWeb from './views/PermissionsWeb/PermissionsWeb.vue';
 
 Vue.use(Router)
 
