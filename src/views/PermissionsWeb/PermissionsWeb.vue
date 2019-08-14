@@ -710,7 +710,7 @@
                                 childrens: []
                             },
                             {
-                                name: 'IP White List',
+                                name: 'Edit',
                                 id: 63,
                                 pid: 'G.A',
                                 fatherPid: null,
@@ -719,7 +719,7 @@
                                 childrens: []
                             },
                             {
-                                name: 'Edit',
+                                name: 'Delete',
                                 id: 64,
                                 pid: 'G.A',
                                 fatherPid: null,
@@ -728,7 +728,7 @@
                                 childrens: []
                             },
                             {
-                                name: 'Delete',
+                                name: 'Disable',
                                 id: 65,
                                 pid: 'G.A',
                                 fatherPid: null,
@@ -737,7 +737,7 @@
                                 childrens: []
                             },
                             {
-                                name: 'Disable',
+                                name: 'Change group',
                                 id: 66,
                                 pid: 'G.A',
                                 fatherPid: null,
@@ -746,19 +746,47 @@
                                 childrens: []
                             },
                             {
-                                name: 'Change group',
+                                name: 'IP White List',
                                 id: 67,
-                                pid: 'G.A',
-                                fatherPid: null,
-                                isBoss: false,
+                                pid: 'G.A.A',
+                                fatherPid: 'G.A',
+                                isBoss: true,
                                 value: false,
-                                childrens: []
-                            }
+                                childrens: [
+                                    {
+                                        name: 'Add',
+                                        id: 68,
+                                        pid: 'G.A.A',
+                                        fatherPid: null,
+                                        isBoss: false,
+                                        value: false,
+                                        childrens: []
+                                    },
+                                    {
+                                        name: 'Edit',
+                                        id: 69,
+                                        pid: 'G.A.A',
+                                        fatherPid: null,
+                                        isBoss: false,
+                                        value: false,
+                                        childrens: []
+                                    },
+                                    {
+                                        name: 'Delete',
+                                        id: 70,
+                                        pid: 'G.A.A',
+                                        fatherPid: null,
+                                        isBoss: false,
+                                        value: false,
+                                        childrens: []
+                                    }
+                                ]
+                            },
                         ]
                     },
                     {
                         name: 'Users',
-                        id: 68,
+                        id: 71,
                         pid: 'G.B',
                         fatherPid: 'G',
                         isBoss: true,
@@ -766,7 +794,7 @@
                         childrens: [
                             {
                                 name: 'Add',
-                                id: 69,
+                                id: 72,
                                 pid: 'G.B',
                                 fatherPid: null,
                                 isBoss: false,
@@ -775,7 +803,7 @@
                             },
                             {
                                 name: 'Change password',
-                                id: 70,
+                                id: 73,
                                 pid: 'G.B',
                                 fatherPid: null,
                                 isBoss: false,
@@ -784,7 +812,7 @@
                             },
                             {
                                 name: 'Delete',
-                                id: 71,
+                                id: 74,
                                 pid: 'G.B',
                                 fatherPid: null,
                                 isBoss: false,
@@ -795,7 +823,7 @@
                     },
                     {
                         name: 'Blocked Users',
-                        id: 72,
+                        id: 75,
                         pid: 'G.C',
                         fatherPid: 'G',
                         isBoss: true,
@@ -803,7 +831,7 @@
                         childrens: [
                             {
                                 name: 'Unlock',
-                                id: 73,
+                                id: 76,
                                 pid: 'G.C',
                                 fatherPid: null,
                                 isBoss: false,
@@ -816,7 +844,7 @@
             },
             companies_ip: {
                 name: 'Companies IP',
-                id: 74,
+                id: 77,
                 pid: 'H',
                 fatherPid: null,
                 isBoss: true,
@@ -824,7 +852,7 @@
                 childrens: [
                     {
                         name: 'Add IP',
-                        id: 75,
+                        id: 78,
                         pid: 'H',
                         fatherPid: null,
                         isBoss: false,
@@ -833,7 +861,7 @@
                     },
                     {
                         name: 'Delete IP',
-                        id: 76,
+                        id: 79,
                         pid: 'H',
                         fatherPid: null,
                         isBoss: false,
@@ -842,7 +870,7 @@
                     },
                     {
                         name: 'Edit IP',
-                        id: 77,
+                        id: 80,
                         pid: 'H',
                         fatherPid: null,
                         isBoss: false,
@@ -853,7 +881,7 @@
             },
             sync: {
                 name: 'Sync',
-                id: 78,
+                id: 81,
                 pid: 'I',
                 fatherPid: null,
                 isBoss: true,
@@ -862,7 +890,7 @@
             },
             install_policies: {
                 name: 'Install Policies',
-                id: 79,
+                id: 82,
                 pid: 'J',
                 fatherPid: null,
                 isBoss: true,
@@ -871,7 +899,7 @@
             },
             browser_warns: {
                 name: 'Browser Warning',
-                id: 80,
+                id: 83,
                 pid: 'K',
                 fatherPid: null,
                 isBoss: true,
@@ -880,7 +908,7 @@
             },
             mikrotik_tools: {
                 name: 'Mikrotik Tools',
-                id: 81,
+                id: 84,
                 pid: 'L',
                 fatherPid: null,
                 isBoss: true,
@@ -888,7 +916,7 @@
                 childrens: [
                     {
                         name: 'Users',
-                        id: 82,
+                        id: 85,
                         pid: 'L.A',
                         fatherPid: 'L',
                         isBoss: true,
@@ -896,7 +924,7 @@
                         childrens: [
                             {
                                 name: 'Usage',
-                                id: 83,
+                                id: 86,
                                 pid: 'L.A',
                                 fatherPid: null,
                                 isBoss: false,
@@ -905,7 +933,7 @@
                             },
                             {
                                 name: 'Status',
-                                id: 84,
+                                id: 87,
                                 pid: 'L.A',
                                 fatherPid: null,
                                 isBoss: false,
@@ -914,7 +942,7 @@
                             },
                             {
                                 name: 'Delete',
-                                id: 84,
+                                id: 88,
                                 pid: 'L.A',
                                 fatherPid: null,
                                 isBoss: false,
@@ -925,7 +953,7 @@
                     },
                     {
                         name: 'Groups',
-                        id: 86,
+                        id: 89,
                         pid: 'L.B',
                         fatherPid: 'L',
                         isBoss: true,
@@ -933,7 +961,7 @@
                         childrens: [
                             {
                                 name: 'Add',
-                                id: 87,
+                                id: 90,
                                 pid: 'L.B',
                                 fatherPid: null,
                                 isBoss: false,
@@ -946,7 +974,7 @@
             },
             client_area: {
                 name: 'Client Area',
-                id: 88,
+                id: 91,
                 pid: 'M',
                 fatherPid: null,
                 isBoss: true,
@@ -954,7 +982,7 @@
                 childrens: [
                     {
                         name: 'Personal configuration',
-                        id: 89,
+                        id: 92,
                         pid: 'M',
                         fatherPid: null,
                         isBoss: false,
@@ -963,7 +991,7 @@
                     },
                     {
                         name: 'Payment records',
-                        id: 90,
+                        id: 93,
                         pid: 'M',
                         fatherPid: null,
                         isBoss: false,
@@ -972,7 +1000,7 @@
                     },
                     {
                         name: 'Manually Pay',
-                        id: 91,
+                        id: 94,
                         pid: 'M',
                         fatherPid: null,
                         isBoss: false,
@@ -983,7 +1011,7 @@
             },
             company_profile: {
                 name: 'Company Profile',
-                id: 92,
+                id: 95,
                 pid: 'N',
                 fatherPid: null,
                 isBoss: true,
@@ -991,7 +1019,7 @@
                 childrens: [
                     {
                         name: 'Chart',
-                        id: 93,
+                        id: 96,
                         pid: 'N',
                         fatherPid: null,
                         isBoss: false,
@@ -1002,7 +1030,7 @@
             },
             report: {
                 name: 'Reports',
-                id: 94,
+                id: 97,
                 pid: 'O',
                 fatherPid: null,
                 isBoss: true,
@@ -1010,7 +1038,7 @@
                 childrens: [
                     {
                         name: 'Generate',
-                        id: 95,
+                        id: 98,
                         pid: 'O',
                         fatherPid: null,
                         isBoss: false,
@@ -1019,7 +1047,7 @@
                     },
                     {
                         name: 'Download',
-                        id: 96,
+                        id: 99,
                         pid: 'O',
                         fatherPid: null,
                         isBoss: false,
@@ -1030,7 +1058,7 @@
             },
             servers: {
                 name: 'Servers',
-                id: 97,
+                id: 100,
                 pid: 'P',
                 fatherPid: null,
                 isBoss: true,
@@ -1038,7 +1066,7 @@
                 childrens: [
                     {
                         name: 'Add',
-                        id: 98,
+                        id: 101,
                         pid: 'P',
                         fatherPid: null,
                         isBoss: false,
