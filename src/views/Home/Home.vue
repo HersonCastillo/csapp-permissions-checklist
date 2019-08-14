@@ -41,7 +41,7 @@
             }, 1);
         }
         downloadFile(): void {
-            const baseurl: string   = 'https://csapp.red5g.com/apk/download/';
+            const baseurl: string   = 'https://csapp.red5g.com/auth/apk/download/';
             const version           = this.downloadurl.version;
             const dateVersion       = this.downloadurl.dateVersion;
             const status            = this.downloadurl.status;
