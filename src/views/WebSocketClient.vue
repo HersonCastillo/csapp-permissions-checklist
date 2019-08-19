@@ -152,6 +152,7 @@
                         }));
                         socket.close();
                     };
+                    socket.onclose = () => console.log('Socket closed');
                 } else {
                     alert('No se puede iniciar sesión');
                 }
